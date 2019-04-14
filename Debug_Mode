@@ -1,0 +1,27 @@
+const int pin1 = 2;
+const int pin2 = 3;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pin1, INPUT);
+  pinMode(pin2, INPUT);
+}
+
+void loop() {
+  delay(50);//Wait 5 seconds to allow for allignment checks
+
+  if(digitalRead(pin1) == HIGH)
+  {
+    Serial.print("pin1\n");     //Notify alignment problem
+  } else {
+    Serial.print("Good1\n");
+  }
+
+  if(digitalRead(pin2) == HIGH)
+  {
+    Serial.print("pin2\n");
+  } else {
+    Serial.print("Good2\n");
+  }
+}
